@@ -1,0 +1,38 @@
+globals:
+  module: globals
+  class: Global
+  priority: 1
+  dependancies: sensors
+  hue_api: !secret hue_api
+  hue_url: !secret hue_url
+  entity_livingroom: input_boolean.sensor_livingroom
+  entity_bedroom: input_boolean.sensor_bedroom
+  entity_spare: input_boolean.sensor_spare
+  hue_id_livingroom: 3
+  hue_id_bedroom: 9
+  hue_id_spare: 14
+
+sensors:
+  module: sensor
+  class: Sensor
+  hue_api: !secret hue_api
+  hue_url: !secret hue_url
+
+actions:
+  module: actions
+  class: Action
+  watch_tv: input_boolean.watch_tv
+  cleaning: input_boolean.cleaning
+  entity_light_livingroom : light.lampada_sala
+
+#init_booleans:
+#  module: syncBooleans
+#  class:
+#  dependencies: sensors
+#  priority: 2
+#  entity_livingroom: input_boolean.sensor_livingroom
+#  entity_bedroom: input_boolean.sensor_bedroom
+#  entity_spare: input_boolean.sensor_spare
+#  hue_id_livingroom: 3
+#  hue_id_bedroom: 9
+#  hue_id_spare: 14
