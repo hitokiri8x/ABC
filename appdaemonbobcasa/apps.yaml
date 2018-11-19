@@ -25,6 +25,13 @@ actions:
   cleaning: input_boolean.cleaning
   entity_light_livingroom : light.lampada_sala
 
+schedules:
+  module: scheduler
+  class: Schedule
+  early_morning_h: 7
+  early_monrning_min: 0
+  late_morning_h: 10
+  late_monrning_min: 0
 #init_booleans:
 #  module: syncBooleans
 #  class:
